@@ -26,14 +26,15 @@ set -o nounset
 . ./scripts/init_environment.sh
 
 
-project=mdwdops # CONSTANT - this is prefixes to all resources of the Parking Sensor sample
+project=mde-kos # CONSTANT - this is prefixes to all resources of the Parking Sensor sample
 github_repo_url="https://github.com/$GITHUB_REPO"
 
+##  az vm list-usage --location "<YOUR_REGION>" -o table
 
 ###################
 # DEPLOY ALL FOR EACH ENVIRONMENT
 
-for env_name in dev stg prod; do  # dev stg prod
+for env_name in sandbox; do  # dev stg prod
     PROJECT=$project \
     DEPLOYMENT_ID=$DEPLOYMENT_ID \
     ENV_NAME=$env_name \
@@ -42,7 +43,6 @@ for env_name in dev stg prod; do  # dev stg prod
     AZURESQL_SERVER_PASSWORD=$AZURESQL_SERVER_PASSWORD \
     bash -c "./scripts/deploy_infrastructure.sh"  # inclues AzDevOps Azure Service Connections and Variable Groups
 done
-
 
 ###################
 # Deploy AzDevOps Pipelines
