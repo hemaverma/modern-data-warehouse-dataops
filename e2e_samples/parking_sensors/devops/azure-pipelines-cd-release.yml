@@ -74,3 +74,25 @@ stages:
     parameters:
       environmentName: 'PROD'
       serviceConnection: 'mdwdops-serviceconnection-prod'
+
+
+stage: deploy_to_sandbox
+  displayName: 'Deploy to Sandbox'
+  variables:
+  - group: mdwdops-release-sandbox
+  - group: mdwdops-secrets-sandbox
+  jobs: 
+  - template: templates/jobs/deploy-databricks-job.yml
+    parameters:
+      environmentName: 'SANDBOX'
+      dbclusterid: $(databricksClusterId)
+  - template: templates/jobs/deploy-azuresqldb-job.yml
+    parameters:
+      environmentName: 'SANDBOX'
+      serviceConnection: 'mdwdops-serviceconnection-sand'
+  - template: templates/jobs/deploy-adf-job.yml
+    parameters:
+      environmentName: 'SANDBOX'
+      serviceConnection: 'mdwdops-serviceconnection-sand'
+
+      
