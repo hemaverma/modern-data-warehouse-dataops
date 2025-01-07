@@ -1,0 +1,39 @@
+# This is the configuration for the Databricks Asset Bundle custom_dab.
+
+bundle:
+  name: custom_dab
+
+# The main job for custom_dab
+resources:
+    jobs:
+        custom_dab_job:
+        name: custom_dab_job
+        tasks:
+            - task_key: notebook_task
+            job_cluster_key: job_cluster
+            notebook_task:
+                notebook_path: ../src/simple_notebook.ipynb
+        job_clusters:
+            - job_cluster_key: job_cluster
+            new_cluster:
+                node_type_id: i3.xlarge
+                spark_version: 13.3.x-scala2.12
+
+targets:
+  # The deployment targets. See https://docs.databricks.com/en/dev-tools/bundles/deployment-modes.html
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-2604991596774780.0.azuredatabricks.net
+
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-2604991596774780.0.azuredatabricks.net
+      root_path: /Shared/.bundle/prod/${bundle.name}
+    run_as:
+      # This runs as hema.verma@mngenvmcap841869.onmicrosoft.com in production. Alternatively,
+      # a service principal could be used here using service_principal_name
+      user_name: hema.verma@mngenvmcap841869.onmicrosoft.com
+    

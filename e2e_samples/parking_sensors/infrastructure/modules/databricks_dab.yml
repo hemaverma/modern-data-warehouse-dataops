@@ -1,0 +1,125 @@
+
+# This is the default bundle configuration if not otherwise overridden in
+# the "targets" top-level mapping.
+bundle: # Required.
+  name: string # Required.
+  databricks_cli_version: string
+  cluster_id: string
+  git:
+    origin_url: string
+    branch: string
+
+# These are for any custom variables for use throughout the bundle.
+variables:
+  <some-unique-variable-name>:
+    description: string
+    default: string or complex
+
+# These are the default workspace settings if not otherwise overridden in
+# the following "targets" top-level mapping.
+workspace:
+  artifact_path: string
+  auth_type: string
+  azure_client_id: string # For Azure Databricks only.
+  azure_environment: string # For Azure Databricks only.
+  azure_login_app_id: string # For Azure Databricks only. Non-operational and reserved for future use.
+  azure_tenant_id: string # For Azure Databricks only.
+  azure_use_msi: true | false # For Azure Databricks only.
+  azure_workspace_resource_id: string # For Azure Databricks only.
+  client_id: string # For Databricks on AWS only.
+  file_path: string
+  google_service_account: string # For Databricks on Google Cloud only.
+  host: string
+  profile: string
+  root_path: string
+  state_path: string
+
+# These are the permissions to apply to experiments, jobs, models, and pipelines defined
+# in the "resources" mapping.
+permissions:
+  - level: <permission-level>
+    group_name: <unique-group-name>
+  - level: <permission-level>
+    user_name: <unique-user-name>
+  - level: <permission-level>
+    service_principal_name: <unique-principal-name>
+
+# These are the default artifact settings if not otherwise overridden in
+# the following "targets" top-level mapping.
+artifacts:
+  <some-unique-artifact-identifier>:
+    build: string
+    files:
+      - source: string
+    path: string
+    type: string
+
+# These are any additional configuration files to include.
+include:
+  - "<some-file-or-path-glob-to-include>"
+  - "<another-file-or-path-glob-to-include>"
+
+# This is the identity to use to run the bundle
+run_as:
+  - user_name: <user-name>
+  - service_principal_name: <service-principal-name>
+
+# These are the default job and pipeline settings if not otherwise overridden in
+# the following "targets" top-level mapping.
+resources:
+  clusters:
+    <some-unique-programmatic-identifier-for-this-cluster>:
+      # See the REST API create request payload reference for clusters.
+  dashboards:
+    <some-unique-programmatic-identifier-for-this-dashboard>:
+      # See the REST API create request payload reference for dashboards.
+  experiments:
+    <some-unique-programmatic-identifier-for-this-experiment>:
+      # See the REST API create request payload reference for experiments.
+  jobs:
+    <some-unique-programmatic-identifier-for-this-job>:
+      # See REST API create request payload reference for jobs.
+  models:
+    <some-unique-programmatic-identifier-for-this-model>:
+      # See the REST API create request payload reference for models.
+  pipelines:
+    <some-unique-programmatic-identifier-for-this-pipeline>:
+      # See the REST API create request payload reference for Delta Live Tables (pipelines).
+  schemas:
+    <some-unique-programmatic-identifier-for-this-schema>:
+      # See the Unity Catalog schema request payload reference.
+
+# These are any additional files or paths to include or exclude.
+sync:
+  include:
+    - "<some-file-or-path-glob-to-include>"
+    - "<another-file-or-path-glob-to-include>"
+  exclude:
+    - "<some-file-or-path-glob-to-exclude>"
+    - "<another-file-or-path-glob-to-exclude>"
+  paths:
+    - "<some-file-or-path-to-synchronize>"
+
+# These are the targets to use for deployments and workflow runs. One and only one of these
+# targets can be set to "default: true".
+targets:
+  <some-unique-programmatic-identifier-for-this-target>:
+    artifacts:
+      # See the preceding "artifacts" syntax.
+    bundle:
+      # See the preceding "bundle" syntax.
+    cluster_id: string
+    default: true | false
+    mode: development
+    presets:
+      <preset>: <value>
+    resources:
+      # See the preceding "resources" syntax.
+    sync:
+      # See the preceding "sync" syntax.
+    variables:
+      <preceding-unique-variable-name>: <non-default-value>
+    workspace:
+      # See the preceding "workspace" syntax.
+    run_as:
+      # See the preceding "run_as" syntax.

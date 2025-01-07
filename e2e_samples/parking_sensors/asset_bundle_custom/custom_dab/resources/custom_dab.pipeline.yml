@@ -1,0 +1,14 @@
+# The main pipeline for custom_dab
+resources:
+  pipelines:
+    custom_dab_pipeline:
+      name: custom_dab_pipeline
+      ## Specify the 'catalog' field to configure this pipeline to make use of Unity Catalog:
+      # catalog: catalog_name
+      target: custom_dab_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
