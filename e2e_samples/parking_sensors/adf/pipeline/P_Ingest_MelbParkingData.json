@@ -188,6 +188,7 @@
 			},
 			{
 				"name": "TransformData",
+				"description": "testdeployment",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
