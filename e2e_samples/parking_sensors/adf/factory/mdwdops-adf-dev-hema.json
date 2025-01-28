@@ -1,0 +1,9 @@
+{
+	"name": "mdwdops-adf-dev-hema",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e9925293-b487-4685-9fb3-323b7c550c73",
+		"tenantId": "e2a315a1-b592-4c7e-b921-066f5d6ef97d"
+	}
+}
