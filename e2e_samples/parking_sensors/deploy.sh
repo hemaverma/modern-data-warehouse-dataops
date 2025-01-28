@@ -25,7 +25,7 @@ set -o nounset
 
 
 
-project=mdwdops # CONSTANT - this is prefixes to all resources of the Parking Sensor sample
+project=mdedops # CONSTANT - this is prefixes to all resources of the Parking Sensor sample
 github_repo_url="https://github.com/$GITHUB_REPO"
 
 

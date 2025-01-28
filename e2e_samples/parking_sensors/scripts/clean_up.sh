@@ -27,7 +27,7 @@ set -o nounset
 # PARAMETERS
 #
 # RESOURCE_GROUP_NAME_PREFIX
-prefix="mdwdops" # CONSTANT - this is prefixes to all resources of the Parking Sensor sample
+prefix="mdedops" # CONSTANT - this is prefixes to all resources of the Parking Sensor sample
 DEPLOYMENT_ID=${DEPLOYMENT_ID:-}
 
 delete_all(){
