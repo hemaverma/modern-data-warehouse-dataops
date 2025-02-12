@@ -1,0 +1,9 @@
+{
+	"name": "mdwdops-adf-dev-h2",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c6e87186-f70c-46d8-99ab-2a72299aca4a",
+		"tenantId": "16b3c013-d300-468d-ac64-7eda0820b6d3"
+	}
+}
