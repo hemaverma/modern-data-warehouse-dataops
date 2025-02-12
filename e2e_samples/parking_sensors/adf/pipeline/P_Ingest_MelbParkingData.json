@@ -76,6 +76,7 @@
 			},
 			{
 				"name": "DownloadSensorData",
+				"description": "Test hv2/12",
 				"type": "Copy",
 				"dependsOn": [
 					{
