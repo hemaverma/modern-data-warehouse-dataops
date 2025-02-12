@@ -76,7 +76,7 @@
 			},
 			{
 				"name": "DownloadSensorData",
-				"description": "testing 2_11",
+				"description": "testing 2_12",
 				"type": "Copy",
 				"dependsOn": [
 					{
