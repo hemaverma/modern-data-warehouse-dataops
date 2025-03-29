@@ -1,18 +1,19 @@
 {
-    "name": "Ds_Http_Parking_Sensors",
-    "properties": {
-        "linkedServiceName": {
-            "referenceName": "Ls_Http_DataSimulator",
-            "type": "LinkedServiceReference"
-        },
-        "annotations": [],
-        "type": "Json",
-        "typeProperties": {
-            "location": {
-                "type": "HttpServerLocation",
-                "relativeUrl": "/sensors"
-            }
-        },
-        "schema": {}
-    }
+	"name": "Ds_Http_Parking_Sensors",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_Http_DataSimulator",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/sensors"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

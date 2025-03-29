@@ -1,21 +1,22 @@
 {
-    "name": "Ds_Http_Parking_Locations",
-    "properties": {
-        "linkedServiceName": {
-            "referenceName": "Ls_Http_DataSimulator",
-            "type": "LinkedServiceReference"
-        },
-        "annotations": [],
-        "type": "Json",
-        "typeProperties": {
-            "location": {
-                "type": "HttpServerLocation",
-                "relativeUrl": {
-                    "value": "/locations",
-                    "type": "Expression"
-                }
-            }
-        },
-        "schema": {}
-    }
+	"name": "Ds_Http_Parking_Locations",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_Http_DataSimulator",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "/locations",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

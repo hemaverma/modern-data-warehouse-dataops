@@ -1,12 +1,13 @@
 {
-    "name": "Ls_Http_DataSimulator",
-    "properties": {
-        "annotations": [],
-        "type": "HttpServer",
-        "typeProperties": {
-            "url": "https://<apiBaseUrl>",
-            "enableServerCertificateValidation": true,
-            "authenticationType": "Anonymous"
-        }
-    }
+	"name": "Ls_Http_DataSimulator",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://mdwdops-api-dev-hv10.azurewebsites.net",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
 }
